@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="author" content="John Lloyd Umani">
+	<meta name="description" content="Explore the main page featuring multiple links to various web development activities.">
+	<meta name="keywords" content="webdev, web development, activities, fun, learning, home">
+	<link rel="icon" href="OLFU_official_logo.png">
+    <title>WEBDEV ACTIVITY</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&family=Roboto+Slab:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100%;
+            margin: 0;
+            padding: 0;
+            background: black;
+            font-family: 'Roboto Slab';
+        }
+
+        .cont {
+            height: 100vh;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+
+        .subcont1,
+        .subcont2,
+        .subcont3 {
+            position: relative;
+            background: black;
+            display: flex;
+            color: black;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+            width: 100%;
+            height: 100%;
+            transition: width 0.5s ease,
+                        color 0.5s ease,
+                        font-size 0.8s ease;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        #name, #section{
+            position: relative;
+            cursor: default;
+        }
+
+        .subcont2:hover{
+            font-size: 1.15rem;
+            color: white;
+        }
+
+        #name::before{
+            opacity: 0;
+            position: absolute;
+            content: "\2907";
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            bottom: 0;
+            top: 0;
+            left: -120%;
+            animation: none;
+            transition: left 2s ease,
+                        opacity 0.5s ease;
+        }
+
+        #name::after{
+            opacity: 0;
+            position: absolute;
+            content: "\2906";
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            bottom: 0;
+            top: 0;
+            right: -120%;
+            animation: none;
+            transition: right 2s ease,
+                        opacity 1s ease;
+        }
+
+        .subcont2:hover #name::before{
+            opacity: 1;
+            left: -60%;
+            animation: wink 1s ease infinite;
+        }
+
+        .subcont2:hover #name::after{
+            opacity: 1;
+            right: -60%;
+            animation: wink 1s ease infinite;
+        }
+
+        @keyframes wink {
+            0%{
+                opacity: 1;
+            }
+
+            100%{
+                opacity: 0.1;
+            }
+        }
+
+        .subcont1::before {
+            background: url(subcont1back.png);
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            filter: grayscale(1);
+            z-index: -1;
+            transition: background 0.5s ease,
+                filter 0.5s ease,
+                height 0.5s ease,
+                width 0.5s ease,
+                border-radius 0.5s ease;
+        }
+
+        .subcont1:hover::before {
+            background: url(https://i.pinimg.com/originals/06/e9/45/06e94579c4cb0dafc78ffc4b1134b122.gif);
+            filter: grayscale(0);
+            background-size: cover;
+            background-position: center;
+            border-radius: 20px;
+            box-shadow: 0px 0px 50px black;
+            z-index: -1;
+            width: 95%;
+            height: 95%;
+        }
+
+        .subcont1::after {
+            opacity: 0;
+            background: conic-gradient( black, #bf00ff, #bf00ff, black, black, black, #7033ff, #7033ff, black, black);
+            content: "";
+            position: absolute;
+            width: 150%;
+            height: 150%;
+            transform: translate(50%, 50%);
+            z-index: -2;
+            animation: rotate 10s linear infinite;
+            transition: opacity 1s ease;
+        }
+
+        .subcont2::before {
+            background: url(subcont2back.png);
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            filter: grayscale(1);
+            z-index: -1;
+            transition: background 0.5s ease,
+                filter 0.5s ease,
+                height 0.5s ease,
+                width 0.5s ease,
+                border-radius 0.5s ease;
+        }
+
+        .subcont2:hover::before {
+            background: url(https://i.pinimg.com/originals/97/0b/1c/970b1c1805358254790eff7cd9ea1fdd.gif);
+            filter: grayscale(0);
+            background-size: cover;
+            background-position: center;
+            border-radius: 20px;
+            box-shadow: 0px 0px 50px black;
+            z-index: -1;
+            width: 95%;
+            height: 95%;
+        }
+
+        .subcont2::after {
+            opacity: 0;
+            background: conic-gradient(black,black, black, rgb(0, 255, 242), rgb(98, 0, 255), black, black,black);
+            content: "";
+            position: absolute;
+            width: 150%;
+            height: 150%;
+            transform: translate(50%, 50%);
+            z-index: -2;
+            animation: rotate 7s linear infinite;
+            transition: opacity 1s ease;
+        }
+
+        .subcont3::before {
+            background: url(subcont3back.png);
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            filter: grayscale(1);
+            z-index: -1;
+            transition: background 0.5s ease,
+                filter 0.5s ease,
+                height 0.5s ease,
+                width 0.5s ease,
+                border-radius 0.5s ease;
+        }
+
+        .subcont3:hover::before {
+            background: url(https://i.pinimg.com/originals/73/aa/89/73aa89679d3462c08bbb912021cf4929.gif);
+            filter: grayscale(0);
+            background-size: cover;
+            background-position: center;
+            border-radius: 20px;
+            box-shadow: 0px 0px 50px black;
+            z-index: -1;
+            width: 95%;
+            height: 95%;
+        }
+
+        .subcont3::after {
+            opacity: 0;
+            background: conic-gradient(black, black, violet, black, black, skyblue, black, black, pink, black, black, #ff007b, black);
+            content: "";
+            position: absolute;
+            width: 150%;
+            height: 150%;
+            transform: translate(50%, 50%);
+            z-index: -2;
+            animation: rotate 10s linear infinite;
+            transition: opacity 1s ease;
+        }
+
+        .subcont1:hover::after,
+        .subcont2:hover::after,
+        .subcont3:hover::after {
+            opacity: 1;
+        }
+
+        a {
+            position: relative;
+            background: transparent;
+            text-decoration: none;
+            color: black;
+            overflow: hidden;
+            padding: 10px 20px;
+            border-radius: 20px;
+            transition: color 0.5s ease,
+                box-shadow 0.5s ease;
+        }
+
+        .subcont1:hover a,
+        .subcont3:hover a {
+            color: white;
+            backdrop-filter: blur(10px);
+            box-shadow: 0px 0px 20px black;
+        }
+
+        #date-link::before{
+            position: absolute;
+            content: "";
+            width: 100%;
+            height: 100%;
+            border-radius: 20px;
+            top: 0;
+            left: -100%;
+            background: hsla(0, 0%, 100%, 0.4);
+            z-index: 1;
+            transition: left 0.5s ease;
+        }
+
+        #date-link:hover::before{
+            left: 0;
+            z-index: -1;
+        }
+
+        #string-link::before{
+            position: absolute;
+            content: "";
+            width: 100%;
+            height: 100%;
+            border-radius: 20px;
+            top: 0;
+            right: -100%;
+            background: hsla(0, 0%, 100%, 0.4);
+            z-index: 1;
+            transition: right 0.5s ease;
+        }
+
+        #string-link:hover::before{
+            right: 0;
+            z-index: -1;
+        }
+
+        #string-link, #date-link{
+            transition: color 0.5s ease;
+        }
+
+        #string-link:hover, #date-link:hover{
+            color: rgb(0, 0, 0);
+            text-shadow: 0px 0px 5px white;
+        }
+
+        @keyframes rotate {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cont">
+        <div class="subcont1" id="subcont1">
+            <a href="date-func.php" id="date-link">
+                <h1>Date Functions</h1>
+            </a>
+        </div>
+        <div class="subcont2" id="subcont2">
+            <h1 id="name">John Lloyd Umani</h1>
+            <h2 id="section">2-YA-2</h2>
+        </div>
+        <div class="subcont3" id="subcont3">
+            <a href="string-func.php" id="string-link">
+                <h1>String Functions</h1>
+            </a>
+        </div>
+    </div>
+    <script>
+        let subcont1 = document.getElementById("subcont1");
+        let subcont2 = document.getElementById("subcont2");
+        let subcont3 = document.getElementById("subcont3");
+
+        subcont1.addEventListener("mouseover", function () {
+            subcont1.style.width = "50%";
+            subcont2.style.width = "25%";
+            subcont3.style.width = "25%";
+        });
+
+        subcont2.addEventListener("mouseover", function () {
+            subcont1.style.width = "25%";
+            subcont2.style.width = "50%";
+            subcont3.style.width = "25%";
+        });
+
+        subcont3.addEventListener("mouseover", function () {
+            subcont1.style.width = "25%";
+            subcont2.style.width = "25%";
+            subcont3.style.width = "50%";
+        });
+    </script>
+</body>
+
+</html>
