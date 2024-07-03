@@ -12,6 +12,7 @@ This repository showcases various PHP date and string functions as part of a sch
 ## Landing Page Design
 
 The landing page of this project features a visually engaging design with GIF elements and rotating borders, enhancing the user experience while exploring PHP functionalities.
+
 ![image](https://github.com/JL-PH/WEBDEV-DATE-AND-STRING-FUNCTIONS/assets/172193580/f94efaf8-6c51-4e59-a2db-828959610b59)
 
 ## Live Demo
